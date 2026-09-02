@@ -10,13 +10,11 @@ const app = express();
 const port = process.env.PORT || 3000;
 const isProduction = process.env.NODE_ENV === 'production';
 
-// Necessário para cookies "secure" funcionarem corretamente atrás do proxy da Vercel
 app.set('trust proxy', 1);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Configuração do armazenamento de sessões no MySQL
 const sessionStore = new MySQLStore({}, pool);
 
 app.use(session({
@@ -40,7 +38,6 @@ app.set('view engine', 'ejs');
 const routes = require('./routes');
 app.use('/', routes);
 
-// 404 - rota não encontrada
 app.use((req, res) => {
     res.status(404).render('404');
 });
@@ -53,8 +50,7 @@ app.use((err, req, res, next) => {
     res.status(500).render('500');
 });
 
-// Em ambientes serverless (Vercel) o app é importado por api/index.js e não deve
-// chamar listen(); localmente (node app.js / npm run dev) ele sobe o servidor normalmente.
+
 if (require.main === module) {
     app.listen(port, () => {
         console.log(`Servidor rodando em http://localhost:${port}`);

@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📚 Moby — Sua Biblioteca Pessoal
+# Moby — Sua Biblioteca Pessoal
 
 Aplicação web full-stack para gerenciar sua coleção de livros: cada usuário tem sua própria estante, com login seguro, busca, criação, edição e remoção de registros.
 
@@ -18,13 +18,13 @@ Aplicação web full-stack para gerenciar sua coleção de livros: cada usuário
 
 ## Funcionalidades
 
-- 🔐 Cadastro e login de usuários com senha criptografada (bcrypt)
-- 🗂️ Sessões persistidas no banco de dados (login continua válido entre reinícios do servidor)
-- 📖 Adicionar, editar, remover e visualizar livros da sua própria estante
-- 🔎 Busca por título, autor, gênero ou ano de publicação
-- 👤 Página de perfil com os últimos livros cadastrados
-- 📱 Layout responsivo feito com Tailwind CSS
-- ⚠️ Páginas de erro (404 / 500) personalizadas
+- Cadastro e login de usuários com senha criptografada (bcrypt)
+- Sessões persistidas no banco de dados (login continua válido entre reinícios do servidor)
+- Adicionar, editar, remover e visualizar livros da sua própria estante
+- Busca por título, autor, gênero ou ano de publicação
+- Página de perfil com os últimos livros cadastrados
+- Layout responsivo feito com Tailwind CSS
+- Páginas de erro (404 / 500) personalizadas
 
 ---
 
@@ -108,6 +108,6 @@ Acesse **http://localhost:3000**.
 
 ---
 
-## 📄 Licença
+## Licença
 
 Este projeto está sob a licença MIT — veja o arquivo [LICENSE](./LICENSE) para mais detalhes.

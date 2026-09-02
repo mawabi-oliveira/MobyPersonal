@@ -1,9 +1,6 @@
 const mysql = require('mysql2');
 require('dotenv').config();
 
-// Em ambiente serverless (Vercel) cada instância da função pode criar seu próprio
-// pool: mantenha connectionLimit baixo para não estourar o limite de conexões
-// simultâneas do seu provedor de MySQL (a maioria dos planos gratuitos permite poucas).
 const pool = mysql.createPool({
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'root',
