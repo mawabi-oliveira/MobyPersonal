@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moby - Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="m-0 h-screen flex justify-center items-center font-sans bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url('../img/clarice-login-2.png');">
+    
+    <div class="w-full px-4 flex justify-center items-center md:px-24 md:justify-end">
+        <div class="bg-[#552482] p-8 rounded-xl w-full max-w-[340px] text-center shadow-2xl box-border">
+            
+            <form id="registerForm" action="/login" method="post">
+                <img src="/img/moby.png" alt="moby-icon" class="w-[100px] h-auto mx-auto mb-4">
+                <h2 class="text-white text-2xl font-bold mb-6">Entre</h2>
+                
+                <% if (typeof error !== 'undefined') { %>
+                    <div class="bg-red-600 text-white p-3 rounded-lg mb-4 text-sm font-medium text-center" role="alert">
+                        <%= error %>
+                    </div>
+                <% } %>
+
+                <div class="mb-5 flex flex-col w-full text-left">
+                    <label for="nom_usuario" class="text-white mb-2 text-sm font-medium">Usuário</label>
+                    <input type="text" id="nom_usuario" name="nom_usuario" placeholder="Seu usuário" autofocus required 
+                           class="w-full p-2.5 border-none rounded-lg text-base outline-none text-black bg-white focus:ring-2 focus:ring-[#d2a118bf]">
+                </div>
+       
+                <div class="mb-5 flex flex-col w-full text-left">
+                    <label for="senha" class="text-white mb-2 text-sm font-medium">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Sua senha" required 
+                           class="w-full p-2.5 border-none rounded-lg text-base outline-none text-black bg-white focus:ring-2 focus:ring-[#d2a118bf]">
+                </div>
+
+                <button type="submit" class="mt-4 w-full bg-[#d2a118bf] text-white p-2.5 border-none rounded-lg cursor-pointer font-bold text-base transition-colors duration-300 hover:bg-[#745d7a75]">
+                    Entrar
+                </button>
+       
+                <p class="mt-6 text-white text-sm">
+                    Não tem uma conta? <a href="./signup" class="text-[#d2a118bf] underline font-bold hover:text-white transition-colors">Registre-se</a>
+                </p>
+            </form>
+
+        </div>
+    </div>
+
+</body>
+</html>

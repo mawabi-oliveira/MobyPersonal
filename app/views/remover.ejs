@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remover Livro - Estante</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-[#D9D6D6] text-[#333] min-h-screen flex flex-col font-sans">
+    <header class="flex justify-between items-center p-4 bg-white shadow-sm">
+        <h1 class="text-[#646464] text-2xl font-semibold">Estante</h1>
+        <a href="/home-logado" class="hover:opacity-80 transition-opacity">
+            <img src="img/moby.png" alt="moby-icon" class="w-[45px] h-auto">
+        </a>
+    </header>
+    
+    <main class="flex justify-center items-center flex-1 p-5">
+        <section class="bg-white p-6 rounded-xl max-w-[500px] w-full shadow-lg">
+            <h2 class="mt-0 mb-5 text-xl font-bold">Remover Livro</h2>
+            <% if (typeof mensagem !== 'undefined') { %>
+                <p class="<%= tipo === 'sucesso' ? 'text-green-600' : 'text-red-600' %> font-bold mb-4"><%= mensagem %></p>
+            <% } %>
+            <form id="removerLivroForm" action="/removerLivros" method="post" class="flex flex-col">
+                <div class="mb-4">
+                    <label for="id" class="font-bold block mb-1">ID do Livro:</label>
+                    <select id="id" name="id_livro" required
+                            class="p-2.5 border border-gray-300 rounded-lg w-full text-base outline-none bg-white focus:border-[#552482] cursor-pointer focus:ring-1 focus:ring-[#552482]">
+                        <option value="" disabled selected hidden>Selecione um livro para remover</option>
+                    </select>
+                </div>
+                <button type="submit" class="p-3 bg-[#552482] text-white border-none rounded-lg cursor-pointer w-full text-base font-bold mt-2 transition-colors duration-300 hover:bg-[#401c4a]">
+                    Remover Livro
+                </button>
+            </form>
+            <p id="mensagem"></p>
+        </section>
+    </main>
+
+    <footer class="bg-[#552482] text-white p-4 text-center mt-auto">
+        <nav>
+            <ul class="list-none p-0 m-0 flex justify-center flex-wrap gap-5">
+                <li><a href="/adicionar" class="text-white no-underline hover:underline">Adicionar um livro</a></li>
+                <li><a href="/editar" class="text-white no-underline hover:underline">Editar um livro</a></li>
+                <li><a href="/visualizar" class="text-white no-underline hover:underline">Visualizar seus livros</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/livrosDoUsuario')
+                .then(response => response.json())
+                .then(livros => {
+                    const select = document.getElementById('id');
+                    livros.forEach(livro => {
+                        const option = document.createElement('option');
+                        option.value = livro.id_livro;
+                        option.textContent = `${livro.id_livro} - ${livro.titulo}`;
+                        select.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    console.error('Erro ao buscar livros do usuário:', error);
+                });
+        });
+    </script>
+</body>
+</html>

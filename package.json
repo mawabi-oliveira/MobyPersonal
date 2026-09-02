@@ -1,0 +1,36 @@
+{
+  "name": "moby-personal-library",
+  "version": "1.0.0",
+  "description": "Moby - aplicacao web para gerenciar sua biblioteca pessoal de livros (Node.js, Express, EJS, MySQL e Tailwind CSS).",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "build:css": "tailwindcss -i ./public/css/input.css -o ./public/css/style.css --minify"
+  },
+  "keywords": [
+    "biblioteca",
+    "express",
+    "ejs",
+    "mysql"
+  ],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.x"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-mysql-session": "^3.0.3",
+    "express-session": "^1.18.0",
+    "mysql2": "^3.10.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "nodemon": "^3.1.4",
+    "tailwindcss": "^4.3.0"
+  }
+}

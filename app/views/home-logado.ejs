@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sua Biblioteca Pessoal">
+    <title>Moby - Sua Biblioteca Pessoal</title>
+    <link rel="shortcut icon" href="/img/img-web.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Nanum+Myeongjo&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inika', serif; }
+        .font-istok { font-family: 'Istok Web', sans-serif; }
+    </style>
+</head>
+
+<body class="bg-[#D9D6D6]">
+    <header class="w-full">
+        <nav id="top" class="w-full min-h-[8vh] py-3 px-4 bg-[#61296F] flex items-center justify-between">
+            <a href="#" class="bg-[#D97518] px-5 py-2.5 text-base md:text-xl text-white ml-[5%] md:ml-[10%] rounded-[15px] flex items-center justify-center no-underline hover:opacity-90 transition-opacity">
+                <span>Bem-vindo, <strong><%= nom_usuario %></strong></span>
+            </a>
+        </nav>
+        <nav id="mid" class="w-full py-4 px-4 flex flex-col sm:flex-row items-center justify-center gap-4 relative">
+            <img src="/img/logo-header.png" alt="Logo Moby" class="w-[65%] sm:w-[50%] md:w-[30%] max-w-[280px] h-auto">
+            
+            <div class="relative inline-block text-left">
+                <button id="menuDropdownBtn" class="bg-[#61296F] text-white font-bold px-5 py-2.5 rounded-lg flex items-center justify-center focus:outline-none shadow-md hover:bg-[#4d2057] transition-colors">
+                    IR PARA A BIBLIOTECA
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <ul id="menuDropdownList" class="absolute hidden left-0 sm:right-0 sm:left-auto mt-2 w-48 bg-white rounded-lg shadow-xl py-1 z-20 ring-1 ring-black ring-opacity-5">
+                    <li><a class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 font-semibold no-underline" href="./adicionar">Comece por aqui!</a></li>
+                    <li><a class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 font-semibold no-underline" href="./perfil">Perfil</a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav id="bottom" class="w-full min-h-[8vh] p-4 bg-[#61296F] text-white flex items-center justify-center text-center">
+            <h3 class="m-0 p-0 text-base sm:text-lg md:text-xl font-bold">DÊ VIDA A SUA BIBLIOTECA PESSOAL!</h3>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4">
+        <div class="relative w-full max-w-4xl mx-auto my-14 h-[15em] overflow-hidden rounded-xl shadow-lg group">
+            <div class="carousel-slide absolute inset-0 w-full h-full opacity-100 transition-opacity duration-500 ease-in-out bg-[url('/img/Frame-0.png')] bg-center bg-contain bg-no-repeat"></div>
+            <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out bg-[url('/img/Frame-1.png')] bg-center bg-contain bg-no-repeat"></div>
+            <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out bg-[url('/img/Frame-2.png')] bg-center bg-contain bg-no-repeat"></div>
+            <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out bg-[url('/img/Frame-3.png')] bg-center bg-contain bg-no-repeat"></div>
+
+            <button id="prevBtn" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-xl transition-all focus:outline-none opacity-0 group-hover:opacity-100 duration-300">
+                &#10094;
+            </button>
+            <button id="nextBtn" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-xl transition-all focus:outline-none opacity-0 group-hover:opacity-100 duration-300">
+                &#10095;
+            </button>
+
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2.5 z-10">
+                <span class="carousel-dot w-3 h-3 rounded-full bg-white cursor-pointer opacity-100 transition-opacity duration-300"></span>
+                <span class="carousel-dot w-3 h-3 rounded-full bg-white cursor-pointer opacity-40 transition-opacity duration-300"></span>
+                <span class="carousel-dot w-3 h-3 rounded-full bg-white cursor-pointer opacity-40 transition-opacity duration-300"></span>
+                <span class="carousel-dot w-3 h-3 rounded-full bg-white cursor-pointer opacity-40 transition-opacity duration-300"></span>
+            </div>
+        </div>
+
+        <section id="books" class="w-full">
+            <div class="title w-full px-6 md:px-[100px] flex items-center font-istok text-[#3C3C3C]">
+                <hr class="flex-grow border-gray-400">
+                <img src="/img/logo-web.png" alt="" class="w-[50px] mx-3">
+                <h1>Recomendação de Livros</h1>
+                <hr class="flex-grow border-gray-400">
+            </div>
+
+            <div class="w-full px-4 py-6 flex flex-col items-center justify-center">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[1150px]">
+                    
+                    <div class="bg-[#ececec] flex flex-row transition-all duration-300 rounded-lg overflow-hidden shadow-md hover:scale-[1.02]">
+                        <img class="w-[110px] h-[160px] object-cover shrink-0" src="/img/azkaban.jpg" alt="Capa Harry Potter 3">
+                        <div class="p-4 overflow-hidden">
+                            <h5 class="text-base font-bold mb-1 text-[#61296F]">HARRY POTTER E O PRISIONEIRO DE AZKABAN</h5>
+                            <p class="text-xs font-bold text-gray-700 leading-relaxed line-clamp-5">É o início do terceiro ano na escola de bruxaria Hogwarts. Harry, Ron e Hermione têm muito o que aprender. Mas uma ameaça ronda a escola e ela se chama Sirius Black. Após doze anos encarcerado na prisão de Azkaban, ele consegue escapar e volta para vingar seu mestre, Lord Voldemort.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#ececec] flex flex-row transition-all duration-300 rounded-lg overflow-hidden shadow-md hover:scale-[1.02]">
+                        <img class="w-[110px] h-[160px] object-cover shrink-0" src="/img/cegueira.jpg" alt="Capa Ensaio sobre a cegueira">
+                        <div class="p-4 overflow-hidden">
+                            <h5 class="text-base font-bold mb-1 text-[#61296F]">ENSAIO SOBRE A CEGUEIRA</h5>
+                            <p class="text-xs font-bold text-gray-700 leading-relaxed line-clamp-5">Ensaio sobre a Cegueira é um romance do escritor português José Saramago, publicado em 1995, e traduzido para diversas línguas. A obra narra a história da epidemia de cegueira branca que se espalha por uma cidade, causando um grande colapso na vida das pessoas e abalando as estruturas sociais.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#ececec] flex flex-row transition-all duration-300 rounded-lg overflow-hidden shadow-md hover:scale-[1.02]">
+                        <img class="w-[110px] h-[160px] object-cover shrink-0" src="/img/cemanos.jpg" alt="Capa Cem anos de solidão">
+                        <div class="p-4 overflow-hidden">
+                            <h5 class="text-base font-bold mb-1 text-[#61296F]">CEM ANOS DE SOLIDÃO</h5>
+                            <p class="text-xs font-bold text-gray-700 leading-relaxed line-clamp-5">Cem Anos de Solidão é uma obra do escritor colombiano Gabriel García Márquez, Prêmio Nobel da Literatura em 1982, e é atualmente considerada uma das obras mais importantes da literatura latino-americana. Essa obra tem a peculiaridade de ser umas das mais lidas e traduzidas de todo o mundo.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#ececec] flex flex-row transition-all duration-300 rounded-lg overflow-hidden shadow-md hover:scale-[1.02]">
+                        <img class="w-[110px] h-[160px] object-cover shrink-0" src="/img/george.jpg" alt="Capa 1984">
+                        <div class="p-4 overflow-hidden">
+                            <h5 class="text-base font-bold mb-1 text-[#61296F]">1984</h5>
+                            <p class="text-xs font-bold text-gray-700 leading-relaxed line-clamp-5">1984 mostra uma futura realidade distópica ocorrida no ano de 1984. Nessa realidade, a Inglaterra é comandada por um regime totalitarista em que todos são vigiados pelo Grande Irmão. Winston Smith, protagonista da narrativa, questiona o poder vigente. O romance, publicado em 1949, está associado ao modernismo inglês.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#ececec] flex flex-row transition-all duration-300 rounded-lg overflow-hidden shadow-md hover:scale-[1.02]">
+                        <img class="w-[110px] h-[160px] object-cover shrink-0" src="/img/jujutsu.jpg" alt="Capa Jujutsu Kaisen">
+                        <div class="p-4 overflow-hidden">
+                            <h5 class="text-base font-bold mb-1 text-[#61296F]">JUJUTSU KAISEN</h5>
+                            <p class="text-xs font-bold text-gray-700 leading-relaxed line-clamp-5">Itadori Yuuji, um estudante do colegial com uma capacidade física única, tem como rotina visitar seu avô que está hospitalizado. Porém, um dia, o selo de um "objeto amaldiçoado" escondido em sua escola é rompido, fazendo surgir criaturas assustadoras. Para salvar seus colegas ele parte em direção ao colégio, quando algo inesperado acontece...!</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#ececec] flex flex-row transition-all duration-300 rounded-lg overflow-hidden shadow-md hover:scale-[1.02]">
+                        <img class="w-[110px] h-[160px] object-cover shrink-0" src="/img/oapanhador.jpg" alt="Capa O apanhador no campo de centeio">
+                        <div class="p-4 overflow-hidden">
+                            <h5 class="text-base font-bold mb-1 text-[#61296F]">O APANHADOR NO CAMPO DE CENTEIO</h5>
+                            <p class="text-xs font-bold text-gray-700 leading-relaxed line-clamp-5">O Apanhador no Campo de Centeio narra a busca do narrador Holden Caulfield por seu lugar no mundo, visto que ele se encontra em um espaço intermediário entre abandonar e permanecer em meio às instituições que o criaram (família, escola, amigos).</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#ececec] flex flex-row transition-all duration-300 rounded-lg overflow-hidden shadow-md hover:scale-[1.02]">
+                        <img class="w-[110px] h-[160px] object-cover shrink-0" src="/img/op.jpg" alt="Capa One Piece">
+                        <div class="p-4 overflow-hidden">
+                            <h5 class="text-base font-bold mb-1 text-[#61296F]">ONE PIECE</h5>
+                            <p class="text-xs font-bold text-gray-700 leading-relaxed line-clamp-5">One Piece é uma série de mangá escrita e ilustrada por Eiichiro Oda. Os capítulos têm sido serializados na revista Weekly Shōnen Jump desde julho de 1997, com os capítulos compilados e publicados em 108 volumes tankōbon pela editora Shueisha até abril de 2024. One Piece conta as aventuras de Monkey D.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#ececec] flex flex-row transition-all duration-300 rounded-lg overflow-hidden shadow-md hover:scale-[1.02]">
+                        <img class="w-[110px] h-[160px] object-cover shrink-0" src="/img/zelda.jpg" alt="Capa Zelda">
+                        <div class="p-4 overflow-hidden">
+                            <h5 class="text-base font-bold mb-1 text-[#61296F]">THE LEGEND OF ZELDA</h5>
+                            <p class="text-xs font-bold text-gray-700 leading-relaxed line-clamp-5">Link é um jovem da floresta que vê seu lar em perigo e parte em uma jornada para deter um rei maligno e salvar o reino de Hyrule! Para completar sua missão, ele terá que encontrar a princesa Zelda e ajudar outros povos para reunir a Triforce e restabelecer o equilíbrio do mundo!</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full bg-[#61296F] flex items-center justify-center text-center p-3 mt-5">
+        <span class="text-white text-sm">©Copyright 2024 Moby. All rights reserved</span>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropdownBtn = document.getElementById('menuDropdownBtn');
+            const dropdownList = document.getElementById('menuDropdownList');
+            
+            dropdownBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdownList.classList.toggle('hidden');
+            });
+
+            document.addEventListener('click', () => {
+                dropdownList.classList.add('hidden');
+            });
+
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.carousel-dot');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentIndex = 0;
+
+            function changeSlide(index) {
+                slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.remove('opacity-0', 'pointer-events-none');
+                        slide.classList.add('opacity-100');
+                        dots[i].classList.remove('opacity-40');
+                        dots[i].classList.add('opacity-100');
+                    } else {
+                        slide.classList.remove('opacity-100');
+                        slide.classList.add('opacity-0', 'pointer-events-none');
+                        dots[i].classList.remove('opacity-100');
+                        dots[i].classList.add('opacity-40');
+                    }
+                });
+                currentIndex = index;
+            }
+
+            prevBtn.addEventListener('click', () => {
+                let idx = currentIndex - 1 < 0 ? slides.length - 1 : currentIndex - 1;
+                changeSlide(idx);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                let idx = currentIndex + 1 >= slides.length ? 0 : currentIndex + 1;
+                changeSlide(idx);
+            });
+
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => changeSlide(i));
+            });
+
+            setInterval(() => {
+                let idx = currentIndex + 1 >= slides.length ? 0 : currentIndex + 1;
+                changeSlide(idx);
+            }, 4000);
+        });
+    </script>
+</body>
+</html>

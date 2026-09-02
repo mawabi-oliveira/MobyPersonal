@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sua Biblioteca Pessoal">
+    <title>Moby - Sua Biblioteca Pessoal</title>
+    <link rel="shortcut icon" href="/img/img-web.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Nanum+Myeongjo&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inika', serif; }
+        .font-istok { font-family: 'Istok Web', sans-serif; }
+    </style>
+</head>
+
+<body class="bg-[#D9D6D6]">
+    <header class="w-full">
+        <nav id="top" class="w-full min-h-[8vh] py-3 px-4 bg-[#61296F] flex items-center justify-between">
+            <div class="bg-[#D97518] px-5 py-2.5 text-base md:text-xl text-white ml-[5%] md:ml-[10%] rounded-[15px] flex items-center justify-center">
+                <span>SEJA BEM VINDO!</span>
+            </div>
+            <a href="./signup" class="text-white no-underline mr-[5%] md:mr-[10%] bg-[#D97518] px-5 py-2.5 rounded-[15px] text-base md:text-xl font-bold hover:opacity-90 transition-opacity">
+                <span>REGISTRE-SE</span>
+            </a>
+        </nav>
+        <nav id="mid" class="w-full py-4 flex items-center justify-center">
+            <img src="/img/logo-header.png" alt="Logo Moby" class="w-[65%] sm:w-[50%] md:w-[30%] max-w-[280px] h-auto">
+        </nav>
+        <nav id="bottom" class="w-full min-h-[8vh] p-4 bg-[#61296F] text-white flex items-center justify-center text-center">
+            <h3 class="m-0 p-0 text-base sm:text-lg md:text-xl font-bold">DÊ VIDA A SUA BIBLIOTECA PESSOAL!</h3>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4">
+        <div class="relative w-full max-w-4xl mx-auto my-14 h-[15em] overflow-hidden rounded-xl shadow-lg group">
+            <div class="carousel-slide absolute inset-0 w-full h-full opacity-100 transition-opacity duration-500 ease-in-out bg-[url('/img/Frame-0.png')] bg-center bg-contain bg-no-repeat"></div>
+            <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out bg-[url('/img/Frame-1.png')] bg-center bg-contain bg-no-repeat"></div>
+            <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out bg-[url('/img/Frame-2.png')] bg-center bg-contain bg-no-repeat"></div>
+            <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out bg-[url('/img/Frame-3.png')] bg-center bg-contain bg-no-repeat"></div>
+
+            <button id="prevBtn" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-xl transition-all focus:outline-none opacity-0 group-hover:opacity-100 duration-300">
+                &#10094;
+            </button>
+            <button id="nextBtn" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-xl transition-all focus:outline-none opacity-0 group-hover:opacity-100 duration-300">
+                &#10095;
+            </button>
+
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2.5 z-10">
+                <span class="carousel-dot w-3 h-3 rounded-full bg-white cursor-pointer opacity-100 transition-opacity duration-300"></span>
+                <span class="carousel-dot w-3 h-3 rounded-full bg-white cursor-pointer opacity-40 transition-opacity duration-300"></span>
+                <span class="carousel-dot w-3 h-3 rounded-full bg-white cursor-pointer opacity-40 transition-opacity duration-300"></span>
+                <span class="carousel-dot w-3 h-3 rounded-full bg-white cursor-pointer opacity-40 transition-opacity duration-300"></span>
+            </div>
+        </div>
+
+        <section id="books" class="w-full">
+            <div class="title w-full px-6 md:px-[100px] flex items-center font-istok text-[#3C3C3C]">
+                <hr class="flex-grow border-gray-400">
+                <img src="/img/logo-web.png" alt="" class="w-[50px] mx-3">
+                <h1 class="text-xl md:text-3xl font-bold pt-2 pl-2">Recomendação de Livros</h1>
+                <hr class="flex-grow border-gray-400">
+            </div>
+
+            <div class="w-full px-4 py-6 flex flex-col items-center justify-center">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[1150px]">
+                    
+                    <div class="bg-[#ececec] flex flex-row transition-all duration-300 rounded-lg overflow-hidden shadow-md hover:scale-[1.02]">
+                        <img class="w-[110px] h-[160px] object-cover shrink-0" src="/img/olhos-dagua.jpg" alt="Capa Olhos d'agua">
+                        <div class="p-4 overflow-hidden">
+                            <h5 class="text-base font-bold mb-1 text-[#61296F]">OLHOS D’ÁGUA</h5>
+                            <p class="text-xs font-bold text-gray-700 leading-relaxed line-clamp-5">Em “Olhos D'água” Conceição Evaristo constrói uma série de narrativas, composta por 15 diferentes contos, que se entrelaçam ao relatarem a história de mulheres e homens negros que sofreram e sofrem os mais diferentes types de violência e depreciação na sociedade.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#ececec] flex flex-row transition-all duration-300 rounded-lg overflow-hidden shadow-md hover:scale-[1.02]">
+                        <img class="w-[110px] h-[160px] object-cover shrink-0" src="/img/hora-da-estrela.jpg" alt="Capa A hora da estrela">
+                        <div class="p-4 overflow-hidden">
+                            <h5 class="text-base font-bold mb-1 text-[#61296F]">A HORA DA ESTRELA</h5>
+                            <p class="text-xs font-bold text-gray-700 leading-relaxed line-clamp-5">A Hora da Estrela é o retrato da jovem datilógrafa alagoana Macabéa, que migra para o Rio de Janeiro e tem novas experiências na cidade grande. A narrativa traz conflitos e reflexões existenciais da protagonista e também daquele que conta sua história, Rodrigo S. M. O livro possui, na realidade, 13 títulos.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#ececec] flex flex-row transition-all duration-300 rounded-lg overflow-hidden shadow-md hover:scale-[1.02]">
+                        <img class="w-[110px] h-[160px] object-cover shrink-0" src="/img/o-tesouro.jpg" alt="Capa O tesouro da casa velha">
+                        <div class="p-4 overflow-hidden">
+                            <h5 class="text-base font-bold mb-1 text-[#61296F]">O TESOURO DA CASA VELHA</h5>
+                            <p class="text-xs font-bold text-gray-700 leading-relaxed line-clamp-5">O Tesouro da Casa Velha (1989) é um livro especial: adotado postumamente, traz uma seleção de 18 textos inéditos escritos durante a velhice, depois dos 90 anos de Cora Coralina, e apresenta uma forte carga de preocupação acerca dos atores sociais, em especial os injustiçados e humilhados.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#ececec] flex flex-row transition-all duration-300 rounded-lg overflow-hidden shadow-md hover:scale-[1.02]">
+                        <img class="w-[110px] h-[160px] object-cover shrink-0" src="/img/percy-jackson.jpg" alt="Capa Percy Jackson">
+                        <div class="p-4 overflow-hidden">
+                            <h5 class="text-base font-bold mb-1 text-[#61296F]">PERCY JACKSON E OS OLIMPIANOS</h5>
+                            <p class="text-xs font-bold text-gray-700 leading-relaxed line-clamp-5">Percy Jackson terá uma missão perigosa. Enquanto enfrenta monstros e engana deuses, ele terá uma jornada através dos EUA para devolver o raio-mestre de Zeus e impedir uma guerra iminente.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#ececec] flex flex-row transition-all duration-300 rounded-lg overflow-hidden shadow-md hover:scale-[1.02]">
+                        <img class="w-[110px] h-[160px] object-cover shrink-0" src="/img/peru-de-natal.jpg" alt="Capa O peru de natal">
+                        <div class="p-4 overflow-hidden">
+                            <h5 class="text-base font-bold mb-1 text-[#61296F]">O PERU DE NATAL</h5>
+                            <p class="text-xs font-bold text-gray-700 leading-relaxed line-clamp-5">Uma família celebra o Natal meses antes por conta de o pai ter falecido num 25 de dezembro. Crescido, seu filho decide acabar com essa extravagância, exigindo que um peru seja preparado no dia de Natal.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#ececec] flex flex-row transition-all duration-300 rounded-lg overflow-hidden shadow-md hover:scale-[1.02]">
+                        <img class="w-[110px] h-[160px] object-cover shrink-0" src="/img/harry-potter.jpg" alt="Capa Harry Potter 1">
+                        <div class="p-4 overflow-hidden">
+                            <h5 class="text-base font-bold mb-1 text-[#61296F]">HARRY POTTER E A PEDRA FILOSOFAL</h5>
+                            <p class="text-xs font-bold text-gray-700 leading-relaxed line-clamp-5">Harry Potter, um órfão maltratado pelos tios, descobre aos 11 anos que é um bruxo destinado a enfrentar o mal que matou seus pais. Ele é o único sobrevivente de um ataque desse bruxo, marcado por uma cicatriz em forma de raio. Harry entra em um mundo mágico, onde aprende sobre sua verdadeira história.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#ececec] flex flex-row transition-all duration-300 rounded-lg overflow-hidden shadow-md hover:scale-[1.02]">
+                        <img class="w-[110px] h-[160px] object-cover shrink-0" src="/img/senhor-dos-aneis1.jpg" alt="Capa Senhor dos Aneis">
+                        <div class="p-4 overflow-hidden">
+                            <h5 class="text-base font-bold mb-1 text-[#61296F]">O SENHOR DOS ANÉIS</h5>
+                            <p class="text-xs font-bold text-gray-700 leading-relaxed line-clamp-5">Em uma terra fantástica e única, um hobbit recebe de presente de seu tio um anel mágico e maligno que precisa ser destruído antes que caia nas mãos do mal. Para isso, o hobbit Frodo tem um caminho árduo pela frente, onde encontra perigo, medo e seres bizarros.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#ececec] flex flex-row transition-all duration-300 rounded-lg overflow-hidden shadow-md hover:scale-[1.02]">
+                        <img class="w-[110px] h-[160px] object-cover shrink-0" src="/img/o-hobbit.jpg" alt="Capa O Hobbit">
+                        <div class="p-4 overflow-hidden">
+                            <h5 class="text-base font-bold mb-1 text-[#61296F]">O HOBBIT</h5>
+                            <p class="text-xs font-bold text-gray-700 leading-relaxed line-clamp-5">Bilbo Bolseiro é um hobbit que leva uma vida confortável e sem ambições, raramente aventurando-se para além de sua despensa ou sua adega. Mas seu contentamento é perturbado quando Gandalf, o mago, e uma companhia de anões batem em sua porta e levam-no para uma expedição.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full bg-[#61296F] flex items-center justify-center text-center p-3 mt-5">
+        <span class="text-white text-sm">©Copyright 2024 Moby. All rights reserved</span>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.carousel-dot');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentIndex = 0;
+
+            function changeSlide(index) {
+                slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.remove('opacity-0', 'pointer-events-none');
+                        slide.classList.add('opacity-100');
+                        dots[i].classList.remove('opacity-40');
+                        dots[i].classList.add('opacity-100');
+                    } else {
+                        slide.classList.remove('opacity-100');
+                        slide.classList.add('opacity-0', 'pointer-events-none');
+                        dots[i].classList.remove('opacity-100');
+                        dots[i].classList.add('opacity-40');
+                    }
+                });
+                currentIndex = index;
+            }
+
+            prevBtn.addEventListener('click', () => {
+                let idx = currentIndex - 1 < 0 ? slides.length - 1 : currentIndex - 1;
+                changeSlide(idx);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                let idx = currentIndex + 1 >= slides.length ? 0 : currentIndex + 1;
+                changeSlide(idx);
+            });
+
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => changeSlide(i));
+            });
+
+            setInterval(() => {
+                let idx = currentIndex + 1 >= slides.length ? 0 : currentIndex + 1;
+                changeSlide(idx);
+            }, 4000);
+        });
+    </script>
+</body>
+</html>

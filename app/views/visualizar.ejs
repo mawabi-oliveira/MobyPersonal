@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Livros</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-[#D9D6D6] text-[#333] min-h-screen flex flex-col font-sans">
+    <header class="flex justify-between items-center p-4 bg-white shadow-md">
+        <h1 class="text-xl font-bold text-[#646464] font-semibold">Estante</h1>
+        <a href="/home-logado" class="hover:opacity-80 transition-opacity">
+            <img src="img/moby.png" alt="moby-icon" class="w-[45px] h-auto">
+        </a>
+    </header>
+
+    <div id="mid" class="bg-white p-3 shadow-sm flex items-center justify-center w-[calc(100%-30px)] max-w-[600px] mx-auto mt-5 rounded-xl">
+        <div class="w-full">
+            <div class="flex items-center w-full">
+                <input type="search" placeholder="Busque por livros aqui!" 
+                       class="flex-1 p-2.5 border border-gray-200 rounded-lg outline-none text-base focus:border-[#552482] focus:ring-1 focus:ring-[#552482]">
+                <div class="ml-2.5 flex items-center justify-center w-[42px] h-[42px] bg-[#bcbcbc] rounded-full cursor-pointer hover:bg-[#a0a0a0] transition-colors" id="searchIcon">
+                    <i class="fas fa-search text-white"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const searchInput = document.querySelector('input[type="search"]');
+        const searchIcon = document.getElementById('searchIcon');
+
+        function executarBusca() {
+            const searchTerm = searchInput.value;
+            window.location.href = '/livros?search=' + encodeURIComponent(searchTerm);
+        }
+
+        searchIcon.addEventListener('click', executarBusca);
+
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                executarBusca();
+            }
+        });
+    </script>
+
+    <main class="flex-1 flex justify-center items-start p-5 w-full max-w-[700px] mx-auto">
+        <section class="bg-[#552482] p-5 rounded-xl w-full shadow-2xl">
+            <h2 class="text-white mb-4 text-center text-xl font-bold">Meus Livros</h2>
+            <ul class="list-none p-0 flex flex-col gap-4 max-h-[60vh] overflow-y-auto pr-1">
+                <% livros.forEach(livro => { %>
+                    <li class="p-4 bg-[#f9f9f9] rounded-lg shadow-sm w-full text-[#333] leading-relaxed">
+                        <strong>Título:</strong> <span class="text-[1.1rem] font-bold text-black"><%= livro.titulo %></span><br>
+                        <strong>Autor:</strong> <span><%= livro.autor %></span><br>
+                        <strong>Data de Publicação:</strong> <span><%= livro.ano_de_publicacao %></span><br>
+                        <strong>Gênero:</strong> <span><%= livro.genero %></span><br>
+                        <strong>Sinopse:</strong> <span class="text-gray-700"><%= livro.sinopse %></span><br>
+                        <strong>ID do Livro:</strong> <span class="text-sm font-mono text-purple-700"><%= livro.id_livro %></span>
+                    </li>
+                <% }); %>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="bg-[#552482] text-white p-4 text-center mt-auto w-full">
+        <nav>
+            <ul class="list-none p-0 m-0 flex justify-center flex-wrap gap-4">
+                <li><a href="/adicionar" class="text-white no-underline hover:underline">Adicionar um livro</a></li>
+                <li><a href="/remover" class="text-white no-underline hover:underline">Remover um livro</a></li>
+                <li><a href="/editar" class="text-white no-underline hover:underline">Editar um livro</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
