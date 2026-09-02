@@ -1,6 +1,7 @@
 <div align="center">
 
-# Moby — Sua Biblioteca Pessoal
+
+# Moby - Sua Biblioteca Pessoal
 
 Aplicação web full-stack para gerenciar sua coleção de livros: cada usuário tem sua própria estante, com login seguro, busca, criação, edição e remoção de registros.
 
